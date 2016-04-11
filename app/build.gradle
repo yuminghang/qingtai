@@ -25,4 +25,6 @@ dependencies {
     compile 'com.android.support:appcompat-v7:23.2.1'
     compile 'eu.the4thfloor.volley:com.android.volley:2015.05.28'
     compile 'com.google.code.gson:gson:2.6.2'
+    compile 'com.facebook.fresco:fresco:0.9.0'
+    compile 'com.readystatesoftware.systembartint:systembartint:1.0.4'
 }

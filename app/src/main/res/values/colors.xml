@@ -5,4 +5,9 @@
     <color name="colorAccent">#FF4081</color>
 
     <color name="color_d2">#ffd2d2d2</color>
+    <color name="white">#FFFFFF</color>
+    <color name="TextColor">#ff4a4a4a</color>
+    <color name="top_color">#21BAAA</color>
+    <color name="backColor">#EEE</color>
+    <color name="metextColor">#8C000000</color>
 </resources>

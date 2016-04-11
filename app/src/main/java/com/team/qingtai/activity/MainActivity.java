@@ -10,6 +10,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
+import com.facebook.drawee.backends.pipeline.Fresco;
 import com.team.qingtai.R;
 import com.team.qingtai.adapter.MainActivity_MyFrageStatePagerAdapter;
 import com.team.qingtai.fragment.FourFragment;
@@ -41,6 +42,8 @@ public class MainActivity extends FragmentActivity {
         // TODO Auto-generated method stub
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        SystemBarTintManager tintManager = new SystemBarTintManager(this);
+        tintManager.setStatusBarTintEnabled(true);
         initMainView();
     }
 

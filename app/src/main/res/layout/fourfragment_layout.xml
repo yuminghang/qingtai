@@ -1,11 +1,298 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:background="@color/backColor"
+    >
+
+    <com.facebook.drawee.view.SimpleDraweeView xmlns:fresco="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/mebackImage"
+        android:layout_width="fill_parent"
+        android:layout_height="290dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:clickable="true"
+        fresco:actualImageScaleType="focusCrop"
+        fresco:failureImage="@drawable/back2"
+        fresco:failureImageScaleType="centerCrop"
+        fresco:placeholderImage="@drawable/back2"
+        fresco:placeholderImageScaleType="centerCrop" />
+
+    <RelativeLayout
+        android:id="@+id/view4_top_liner"
+        android:layout_width="match_parent"
+        android:layout_height="57dp"
+        android:alpha="0.8"
+        android:background="@color/top_color">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:text="个人中心"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+
+        <ImageView
+            android:id="@+id/viewiner4change"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentRight="true"
+            android:layout_margin="10dp"
+            android:gravity="center"
+            android:src="@drawable/dots"
+            android:textColor="@color/TextColor" />
+    </RelativeLayout>
+
+    <com.facebook.drawee.view.SimpleDraweeView xmlns:fresco="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/touxiang"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginRight="20dp"
+        android:clickable="false"
+        fresco:actualImageScaleType="focusCrop"
+        fresco:failureImage="@drawable/initavatar"
+        fresco:failureImageScaleType="centerCrop"
+        fresco:placeholderImage="@drawable/initavatar"
+        fresco:placeholderImageScaleType="centerCrop"
+        fresco:roundAsCircle="true"
+        fresco:roundingBorderColor="@color/white"
+        fresco:roundingBorderWidth="2dp"></com.facebook.drawee.view.SimpleDraweeView>
 
     <TextView
+        android:id="@+id/introduceText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="4444444444444444444444444444" />
-</LinearLayout>
+        android:layout_below="@id/mebackImage"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="5dp"
+        android:layout_toLeftOf="@id/touxiang"
+        android:maxLines="1"
+        android:textColor="#FF9B9B9B"
+        android:textSize="14sp" />
+
+    <ImageView
+        android:id="@+id/sex"
+        android:layout_width="17dp"
+        android:layout_height="17dp"
+        android:layout_above="@id/introduceText"
+        android:layout_marginBottom="1dp"
+        android:layout_marginRight="5dp"
+        android:layout_toLeftOf="@id/touxiang"
+        android:scaleType="centerInside" />
+
+
+    <TextView
+        android:id="@+id/nickName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/relativeLayout1"
+        android:layout_marginBottom="1dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="3dp"
+        android:layout_toLeftOf="@id/sex"
+        android:gravity="right|bottom"
+        android:maxLines="1"
+        android:textColor="#FFFFFFFF"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/mebackImage">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="205.4dp"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="70.6dp"
+            android:background="@drawable/corner">
+
+            <RelativeLayout
+                android:id="@+id/meR2"
+                android:layout_width="match_parent"
+                android:layout_height="49.8dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:background="@drawable/corner">
+
+                <ImageView
+                    android:id="@+id/ainow2"
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="28.4dp"
+                    android:src="@drawable/connect" />
+
+                <TextView
+                    android:id="@+id/meItem2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginLeft="64dp"
+                    android:layout_marginTop="10dp"
+                    android:gravity="right"
+                    android:text="@string/meItem2"
+                    android:textColor="@color/metextColor"
+                    android:textSize="14sp" />
+
+                <ImageView
+                    android:layout_width="14dp"
+                    android:layout_height="14dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="right|center"
+                    android:layout_marginRight="38.5dp"
+                    android:src="@drawable/arrowright" />
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/viewpadding1"
+                android:layout_width="293dp"
+                android:layout_height="1dp"
+                android:layout_below="@id/meR2"
+                android:layout_centerHorizontal="true"
+                android:background="#FFE1E1E1" />
+
+            <RelativeLayout
+                android:id="@+id/meR3"
+                android:layout_width="match_parent"
+                android:layout_height="49.8dp"
+                android:layout_below="@id/viewpadding1"
+                android:layout_centerHorizontal="true"
+                android:background="@color/white"
+                android:paddingBottom="10dp"
+                android:paddingTop="10dp">
+
+                <ImageView
+                    android:id="@+id/ainow3"
+                    android:layout_width="23dp"
+                    android:layout_height="23dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginTop="5dp"
+                    android:src="@drawable/album" />
+
+                <TextView
+                    android:id="@+id/meItem3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="64dp"
+                    android:gravity="right"
+                    android:text="@string/meItem3"
+                    android:textColor="@color/metextColor"
+                    android:textSize="14sp" />
+
+                <ImageView
+                    android:layout_width="14dp"
+                    android:layout_height="14dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="38.5dp"
+                    android:src="@drawable/arrowright" />
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/viewpadding2"
+                android:layout_width="293dp"
+                android:layout_height="1dp"
+                android:layout_below="@id/meR3"
+                android:layout_centerHorizontal="true"
+                android:background="#FFE1E1E1" />
+
+            <RelativeLayout
+                android:id="@+id/meR4"
+                android:layout_width="match_parent"
+                android:layout_height="49.8dp"
+                android:layout_below="@id/viewpadding2"
+                android:background="@color/white">
+
+                <ImageView
+                    android:id="@+id/ainow4"
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="28.4dp"
+                    android:layout_marginTop="5dp"
+                    android:src="@drawable/collect" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginLeft="64dp"
+                    android:layout_marginTop="10dp"
+                    android:gravity="right"
+                    android:text="@string/meItem4"
+                    android:textColor="@color/metextColor"
+                    android:textSize="14sp" />
+
+                <ImageView
+                    android:layout_width="14dp"
+                    android:layout_height="14dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="right|center"
+                    android:layout_marginRight="38.5dp"
+                    android:src="@drawable/arrowright" />
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/viewpadding3"
+                android:layout_width="293dp"
+                android:layout_height="1dp"
+                android:layout_below="@id/meR4"
+                android:layout_centerHorizontal="true"
+                android:background="#FFE1E1E1" />
+
+            <RelativeLayout
+                android:id="@+id/meR6"
+                android:layout_width="match_parent"
+                android:layout_height="49.8dp"
+                android:layout_below="@id/viewpadding3"
+                android:layout_centerHorizontal="true"
+                android:background="@drawable/corner">
+
+                <ImageView
+                    android:id="@+id/ainow6"
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="28.4dp"
+                    android:layout_marginTop="5dp"
+                    android:src="@drawable/setting" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginLeft="64dp"
+                    android:layout_marginTop="10dp"
+                    android:gravity="right|center"
+                    android:text="@string/meItem6"
+                    android:textColor="@color/metextColor"
+                    android:textSize="14sp" />
+
+                <ImageView
+                    android:layout_width="14dp"
+                    android:layout_height="14dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="right|center"
+                    android:layout_marginRight="38.5dp"
+                    android:src="@drawable/arrowright" />
+            </RelativeLayout>
+        </RelativeLayout>
+    </RelativeLayout>
+
+</RelativeLayout>
