@@ -2,10 +2,148 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#eee"
     android:orientation="vertical">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="222222222222222222222222" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="57dp"
+        android:background="@color/top_color">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="知道"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:id="@+id/first"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:clickable="true">
+
+            <RelativeLayout
+                android:id="@+id/viewpager_RelativeLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <com.team.qingtai.view.MyViewPager
+                    android:id="@+id/ViewPagershows"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="10dp"></com.team.qingtai.view.MyViewPager>
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:background="@android:color/transparent">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@android:color/transparent"
+                        android:padding="5dp">
+
+                        <LinearLayout
+                            android:id="@+id/point_group_LinearLayout"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@android:color/transparent"
+                            android:orientation="horizontal" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@android:color/transparent"
+                        android:padding="5dp">
+
+                        <View
+                            android:id="@+id/blue_point_View"
+                            android:layout_width="8dp"
+                            android:layout_height="8dp"
+                            android:layout_alignParentTop="true"
+                            android:background="@drawable/dot_blue" />
+                    </LinearLayout>
+
+                </RelativeLayout>
+            </RelativeLayout>
+
+
+            <com.facebook.drawee.view.SimpleDraweeView xmlns:fresco="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/view21"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_below="@id/viewpager_RelativeLayout"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="10dp"
+                fresco:actualImageScaleType="focusCrop"
+                fresco:failureImage="@drawable/initavatar"
+                fresco:failureImageScaleType="centerCrop"
+                fresco:progressBarAutoRotateInterval="5000"
+                fresco:progressBarImage="@drawable/loading_01"
+                fresco:progressBarImageScaleType="centerInside"
+                fresco:roundAsCircle="false"
+                fresco:roundedCornerRadius="4dp"
+                fresco:roundingBorderColor="@color/white"
+                fresco:roundingBorderWidth="2dp" />
+
+
+            <com.facebook.drawee.view.SimpleDraweeView xmlns:fresco="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/view22"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_below="@id/view21"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="10dp"
+                android:scaleType="centerCrop"
+                fresco:actualImageScaleType="focusCrop"
+                fresco:failureImage="@drawable/initavatar"
+                fresco:failureImageScaleType="centerCrop"
+                fresco:progressBarAutoRotateInterval="5000"
+                fresco:progressBarImage="@drawable/loading_01"
+                fresco:progressBarImageScaleType="centerInside"
+                fresco:roundAsCircle="false"
+                fresco:roundedCornerRadius="4dp"
+                fresco:roundingBorderColor="@color/white"
+                fresco:roundingBorderWidth="2dp" />
+
+
+            <com.facebook.drawee.view.SimpleDraweeView xmlns:fresco="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/view23"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_below="@id/view22"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="10dp"
+                android:scaleType="centerCrop"
+                fresco:actualImageScaleType="focusCrop"
+                fresco:failureImage="@drawable/initavatar"
+                fresco:failureImageScaleType="centerCrop"
+                fresco:progressBarAutoRotateInterval="5000"
+                fresco:progressBarImage="@drawable/loading_01"
+                fresco:progressBarImageScaleType="centerInside"
+                fresco:roundAsCircle="false"
+                fresco:roundedCornerRadius="4dp"
+                fresco:roundingBorderColor="@color/white"
+                fresco:roundingBorderWidth="2dp" />
+
+        </RelativeLayout>
+    </ScrollView>
+
 </LinearLayout>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:id="@+id/rilitest"
+        android:layout_width="match_parent"
+        android:layout_height="57dp"
+        android:background="@color/top_color">
+
+        <RelativeLayout
+            android:id="@+id/addinformationback"
+            android:layout_width="57dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:clickable="true">
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:background="@null"
+                android:contentDescription="@null"
+                android:src="@drawable/arrowwhiteleft" />
+
+        </RelativeLayout>
+
+
+        <TextView
+            android:id="@+id/addinformationtitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="编辑"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/addinformationset"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="20dp"
+            android:background="@android:color/transparent"
+            android:gravity="right|center_vertical"
+            android:text="完成"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:visibility="gone" />
+    </RelativeLayout>
+</RelativeLayout>

@@ -10,4 +10,6 @@
     <color name="top_color">#21BAAA</color>
     <color name="backColor">#EEE</color>
     <color name="metextColor">#8C000000</color>
+    <color name="back">#FFF2F2F2</color>
+
 </resources>

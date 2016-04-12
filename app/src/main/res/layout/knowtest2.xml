@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include layout="@layout/title" />
+
+    <TableRow
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="70dp">
+
+        <LinearLayout
+            android:id="@+id/knowsale1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:orientation="vertical">
+
+            <ImageView
+
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/heh1"></ImageView>
+
+            <TextView
+                android:layout_width="100dp"
+                android:layout_height="30dp"
+                android:gravity="center"
+                android:text="红糖姜茶"
+                android:textColor="@color/TextColor"
+                android:textSize="16sp"></TextView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/knowsale2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50dp"
+            android:clickable="true"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/heh2"></ImageView>
+
+            <TextView
+                android:layout_width="100dp"
+                android:layout_height="30dp"
+                android:gravity="center"
+                android:text="红枣"
+                android:textColor="@color/TextColor"
+                android:textSize="16sp"></TextView>
+        </LinearLayout>
+    </TableRow>
+
+    <TableRow
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="30dp">
+
+        <LinearLayout
+            android:id="@+id/knowsale3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/heh3"></ImageView>
+
+            <TextView
+                android:layout_width="100dp"
+                android:layout_height="30dp"
+                android:gravity="center"
+                android:text="暖宝贴"
+                android:textColor="@color/TextColor"
+                android:textSize="16sp"></TextView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/knowsale4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50dp"
+            android:clickable="true"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/heh4"></ImageView>
+
+            <TextView
+                android:layout_width="100dp"
+                android:layout_height="30dp"
+                android:gravity="center"
+                android:text="电暖宝"
+                android:textColor="@color/TextColor"
+                android:textSize="16sp"></TextView>
+        </LinearLayout>
+    </TableRow>
+
+    <TableRow
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="30dp">
+
+        <LinearLayout
+            android:id="@+id/knowsale5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/heh5"></ImageView>
+
+            <TextView
+                android:layout_width="100dp"
+                android:layout_height="30dp"
+                android:gravity="center"
+                android:text="姨妈巾"
+                android:textColor="@color/TextColor"
+                android:textSize="16sp"></TextView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/knowsale6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50dp"
+            android:clickable="true"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/heh6"></ImageView>
+
+            <TextView
+                android:layout_width="100dp"
+                android:layout_height="30dp"
+                android:gravity="center"
+                android:text="避孕"
+                android:textColor="@color/TextColor"
+                android:textSize="16sp"></TextView>
+        </LinearLayout>
+    </TableRow>
+
+</TableLayout>

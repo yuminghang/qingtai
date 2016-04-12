@@ -1,16 +1,22 @@
 package com.team.qingtai.activity;
 
+import android.annotation.TargetApi;
+import android.graphics.Color;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.ViewPager;
 import android.view.KeyEvent;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.facebook.drawee.backends.pipeline.Fresco;
+import com.readystatesoftware.systembartint.SystemBarTintManager;
 import com.team.qingtai.R;
 import com.team.qingtai.adapter.MainActivity_MyFrageStatePagerAdapter;
 import com.team.qingtai.fragment.FourFragment;
@@ -42,9 +48,29 @@ public class MainActivity extends FragmentActivity {
         // TODO Auto-generated method stub
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        initStatusBar();
+        initMainView();
+    }
+
+    private void initStatusBar() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+            setTranslucentStatus(true);
+        }
         SystemBarTintManager tintManager = new SystemBarTintManager(this);
         tintManager.setStatusBarTintEnabled(true);
-        initMainView();
+        tintManager.setStatusBarTintResource(R.color.top_color);//通知栏所需颜色
+    }
+
+    private void setTranslucentStatus(boolean on) {
+        Window win = getWindow();
+        WindowManager.LayoutParams winParams = win.getAttributes();
+        final int bits = WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS;
+        if (on) {
+            winParams.flags |= bits;
+        } else {
+            winParams.flags &= ~bits;
+        }
+        win.setAttributes(winParams);
     }
 
     private void initMainView() {
