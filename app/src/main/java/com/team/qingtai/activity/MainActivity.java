@@ -17,6 +17,7 @@ import android.widget.Toast;
 
 import com.facebook.drawee.backends.pipeline.Fresco;
 import com.readystatesoftware.systembartint.SystemBarTintManager;
+import com.team.qingtai.MyApplication;
 import com.team.qingtai.R;
 import com.team.qingtai.adapter.MainActivity_MyFrageStatePagerAdapter;
 import com.team.qingtai.fragment.FourFragment;
@@ -48,6 +49,8 @@ public class MainActivity extends FragmentActivity {
         // TODO Auto-generated method stub
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        MyApplication.getInstance().addActivity(this);
+
         initStatusBar();
         initMainView();
     }

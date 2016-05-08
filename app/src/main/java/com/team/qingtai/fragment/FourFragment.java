@@ -1,9 +1,11 @@
 package com.team.qingtai.fragment;
 
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,20 +15,37 @@ import android.widget.RelativeLayout;
 import com.facebook.drawee.backends.pipeline.Fresco;
 import com.facebook.drawee.view.SimpleDraweeView;
 import com.team.qingtai.R;
+import com.team.qingtai.activity.FourFragment_Activitys.MyPhotoActivity;
 
-public class FourFragment extends Fragment {
-    private SimpleDraweeView headImage, backImage;
+import java.util.ArrayList;
+
+public class FourFragment extends Fragment implements View.OnClickListener {
+    private SimpleDraweeView headImage, backGroundImage;
+    private View view;
+    private RelativeLayout mer2, mer3, mer4, mer5;
 
     @Override
     public View onCreateView(LayoutInflater inflater,
                              @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         // TODO Auto-generated method stub
         Fresco.initialize(getActivity());
-        View view = inflater.inflate(R.layout.fourfragment_layout, container, false);
+        view = inflater.inflate(R.layout.fourfragment_layout, container, false);
         headImage = (SimpleDraweeView) view.findViewById(R.id.touxiang);
         headImage.setImageURI(Uri.parse("res:///" + R.drawable.initavatar));
-        backImage = (SimpleDraweeView) view.findViewById(R.id.mebackImage);
+        backGroundImage = (SimpleDraweeView) view.findViewById(R.id.meBackGroundImage);
+        initViews();
         return view;
+    }
+
+    private void initViews() {
+        mer2 = (RelativeLayout) view.findViewById(R.id.meR2);
+        mer3 = (RelativeLayout) view.findViewById(R.id.meR3);
+        mer4 = (RelativeLayout) view.findViewById(R.id.meR4);
+        mer5 = (RelativeLayout) view.findViewById(R.id.meR5);
+        mer2.setOnClickListener(this);
+        mer3.setOnClickListener(this);
+        mer4.setOnClickListener(this);
+        mer5.setOnClickListener(this);
     }
 
     @Override
@@ -39,9 +58,9 @@ public class FourFragment extends Fragment {
     private void updateinfor() {
         // 屏幕匹配
         long heigth = getActivity().getWindowManager().getDefaultDisplay().getHeight();
-        RelativeLayout.LayoutParams para = (RelativeLayout.LayoutParams) backImage.getLayoutParams();
+        RelativeLayout.LayoutParams para = (RelativeLayout.LayoutParams) backGroundImage.getLayoutParams();
         para.height = (int) (heigth * 1 / 3);
-        backImage.setLayoutParams(para);
+        backGroundImage.setLayoutParams(para);
 
         RelativeLayout.LayoutParams para1 = (RelativeLayout.LayoutParams) headImage.getLayoutParams();
         long meheight = para1.height;
@@ -49,4 +68,80 @@ public class FourFragment extends Fragment {
         headImage.setLayoutParams(para1);
     }
 
+    @Override
+    public void onClick(View v) {
+        // TODO Auto-generated method stub
+        switch (v.getId()) {
+//            case R.id.meR2:
+//                if (myapp.getIsLoad()) {
+//                    Intent intent1 = new Intent(getActivity(), GuanLianTa.class);
+//                    intent1.putExtra("fromwhere", "native");
+//                    startActivity(intent1);
+//                } else {
+//                    notload();
+//                }
+//                break;
+            case R.id.meR3:
+//                if (myapp.getIsLoad()) {
+                Intent intent2 = new Intent(getActivity(), MyPhotoActivity.class);
+//                    ArrayList<String> imagePathList = new ArrayList<String>();
+//                    imagePathList.add("null");
+                // intent2.putStringArrayListExtra("paths", imagePathList);
+                startActivity(intent2);
+//                } else {
+//                    notload();
+//                }
+                break;
+//            case R.id.meR4:
+//                if (myapp.getIsLoad()) {
+//                    // Intent intent3 = new
+//                    // Intent(getActivity(),otherUserZhuye.class);
+//                    Intent intent3 = new Intent(getActivity(), CollectActivity.class);
+//                    // intent3.putExtra("userId", 30);
+//                    startActivity(intent3);
+//                } else {
+//                    notload();
+//                }
+//                break;
+//            case R.id.meR6:
+//                if (myapp.getIsLoad()) {
+//                    Intent intent4 = new Intent(getActivity(), settingactivity.class);
+//                    startActivity(intent4);
+//                } else {
+//                    notload();
+//                }
+//                break;
+//            case R.id.viewiner4change:
+//                if (myapp.getIsLoad()) {
+//                    Intent intent5 = new Intent(getActivity(), meInfor.class);
+//                    intent5.putExtra("fromwhere", "noload");
+//                    startActivity(intent5);
+//                } else {
+//                    notload();
+//                }
+//                break;
+//            case R.id.mebackImage:
+//                if (myapp.getIsLoad()) {
+//                    Intent intent1 = new Intent(getActivity(), mezhuye.class);
+//                    int id = myapp.getMyUserId();
+//                    intent1.putExtra("id", id);
+//                    Log.d("123", "my id==" + id);
+//                    intent1.putExtra("isme", true);
+//                    startActivity(intent1);
+//                } else {
+//                    notload();
+//                }
+//                break;
+//		case R.id.touxiang:
+//			if (myapp.getIsLoad()) {
+//				Intent intent1 = new Intent(getActivity(), mezhuye.class);
+//				int id=myapp.getMyUserId();
+//				intent1.putExtra("id", id);
+//				intent1.putExtra("isme", true);
+//				startActivity(intent1);
+//			} else {
+//				notload();
+//			}
+        }
+    }
 }

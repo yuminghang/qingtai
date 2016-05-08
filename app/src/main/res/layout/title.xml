@@ -33,7 +33,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
-            android:text="编辑"
+            android:text="相册"
             android:textColor="@color/white"
             android:textSize="18sp" />
 
@@ -45,9 +45,9 @@
             android:layout_marginRight="20dp"
             android:background="@android:color/transparent"
             android:gravity="right|center_vertical"
-            android:text="完成"
+            android:text="编辑"
             android:textColor="@color/white"
-            android:textSize="16sp"
-            android:visibility="gone" />
+            android:textSize="16sp" />
+        <!--android:visibility="gone"-->
     </RelativeLayout>
 </RelativeLayout>

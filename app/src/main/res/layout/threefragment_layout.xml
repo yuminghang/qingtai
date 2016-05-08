@@ -4,8 +4,73 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="33333333333333333333333333" />
+    <RelativeLayout
+        android:id="@+id/activity_community_top_window"
+        android:layout_width="match_parent"
+        android:layout_height="57dp"
+        android:layout_alignParentTop="true"
+        android:background="#ff21baaa">
+
+        <Button
+            android:id="@+id/msgbox_btn"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="16dp"
+            android:background="@drawable/msg" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_centerVertical="true">
+
+            <TextView
+                android:id="@+id/newest_btn"
+                android:layout_width="76dp"
+                android:layout_height="27dp"
+                android:layout_gravity="center_vertical"
+                android:background="@drawable/new_shape"
+                android:gravity="center"
+                android:text="最新 "
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/hotest_btn"
+                android:layout_width="76dp"
+                android:layout_height="27dp"
+                android:layout_gravity="center_vertical"
+                android:background="@drawable/hot_shape_press"
+                android:gravity="center"
+                android:text="最热"
+                android:textSize="14sp" />
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/new_blog_btn"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="18.8dp"
+            android:background="@drawable/add_blog" />
+
+    </RelativeLayout>
+
+    <include layout="@layout/community_top_layout" />
+
+    <View
+        android:id="@+id/activity_community_divider"
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_below="@id/activity_community_top_window"
+        android:background="#ffa0a0a0" />
+
+    <FrameLayout
+        android:id="@+id/activity_community_fragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/activity_community_divider"></FrameLayout>
 </LinearLayout>

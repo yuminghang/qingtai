@@ -4,7 +4,7 @@
     android:background="@color/backColor">
 
     <com.facebook.drawee.view.SimpleDraweeView xmlns:fresco="http://schemas.android.com/apk/res-auto"
-        android:id="@+id/mebackImage"
+        android:id="@+id/meBackGroundImage"
         android:layout_width="fill_parent"
         android:layout_height="290dp"
         android:layout_alignParentTop="true"
@@ -64,7 +64,7 @@
         android:id="@+id/introduceText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/mebackImage"
+        android:layout_below="@id/meBackGroundImage"
         android:layout_marginLeft="15dp"
         android:layout_marginTop="5dp"
         android:layout_toLeftOf="@id/touxiang"
@@ -102,7 +102,7 @@
         android:id="@+id/relativeLayout1"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/mebackImage">
+        android:layout_below="@id/meBackGroundImage">
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -254,7 +254,7 @@
                 android:background="#FFE1E1E1" />
 
             <RelativeLayout
-                android:id="@+id/meR6"
+                android:id="@+id/meR5"
                 android:layout_width="match_parent"
                 android:layout_height="49.8dp"
                 android:layout_below="@id/viewpadding3"

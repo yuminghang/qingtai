@@ -11,5 +11,7 @@
     <color name="backColor">#EEE</color>
     <color name="metextColor">#8C000000</color>
     <color name="back">#FFF2F2F2</color>
+    <color name="little_black">#515151</color>
+    <color name="almost_white">#f3f3f3</color>
 
 </resources>
