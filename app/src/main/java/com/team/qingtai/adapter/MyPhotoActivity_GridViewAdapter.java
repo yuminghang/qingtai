@@ -9,46 +9,40 @@ import android.widget.BaseAdapter;
 import android.widget.CheckBox;
 import android.widget.RelativeLayout;
 
-import com.lzy.imagepicker.bean.ImageItem;
+import com.facebook.drawee.backends.pipeline.Fresco;
+import com.facebook.drawee.backends.pipeline.PipelineDraweeController;
+import com.facebook.imagepipeline.common.ResizeOptions;
+import com.facebook.imagepipeline.request.ImageRequest;
+import com.facebook.imagepipeline.request.ImageRequestBuilder;
 import com.team.qingtai.R;
+import com.team.qingtai.activity.FourFragment_Activitys.MyPhotoActivity;
 
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Created by ymh on 2016/5/8.
  */
 public class MyPhotoActivity_GridViewAdapter extends BaseAdapter {
-    private List<ImageItem> imageList;
     private Activity activity;
     private int width;
+    public static boolean isDelete = false;
 
-    public MyPhotoActivity_GridViewAdapter(Activity activity, ArrayList<ImageItem> imageList, int width) {
-        this.imageList = imageList;
+    public MyPhotoActivity_GridViewAdapter(Activity activity, int width) {
         this.activity = activity;
         this.width = width;
     }
 
-    public void setImageList(List<ImageItem> imageList) {
-//        imageList.containsAll();
-//        for (int i = 0; i < imageList.size(); i++) {
-//            imageList.add(i, imageList.get(i));
-//        }
-//        this.imageList.addAll(imageList);
-        notifyDataSetChanged();
-    }
 
     @Override
     public int getCount() {
         // TODO Auto-generated method stub
-        Log.d("123", "相册数目:" + imageList.size());
-        return imageList.size();
+        Log.d("123", "相册数目:" + MyPhotoActivity.mImageList.size());
+        return MyPhotoActivity.mImageList.size();
     }
 
     @Override
     public Object getItem(int position) {
         // TODO Auto-generated method stub
-        return imageList.get(position);
+        return MyPhotoActivity.mImageList.get(position);
     }
 
     @Override
@@ -76,22 +70,39 @@ public class MyPhotoActivity_GridViewAdapter extends BaseAdapter {
             holder = (ViewHolder) convertView.getTag();
         }
         if (position == 0) {
-            holder.pic.setImageResource(imageList.get(position).width);
+            int width1 = 50, height1 = 50;
+            ImageRequest request = ImageRequestBuilder.newBuilderWithSource(Uri.parse(MyPhotoActivity.mImageList.get(position)))
+                    .setResizeOptions(new ResizeOptions(width1, height1))
+                    .build();
+            PipelineDraweeController controller = (PipelineDraweeController) Fresco.newDraweeControllerBuilder()
+                    .setOldController(holder.pic.getController())
+                    .setImageRequest(request)
+                    .build();
+            holder.pic.setController(controller);
             holder.cb.setVisibility(CheckBox.GONE);
         } else {
-//            if (isDelete) {
-//                holder.cb.setVisibility(CheckBox.VISIBLE);
-//                holder.cb.setChecked(false);
-//            } else {
-//                holder.cb.setVisibility(CheckBox.GONE);
-//            }
+            if (isDelete) {
+                holder.cb.setVisibility(CheckBox.VISIBLE);
+                holder.cb.setChecked(false);
+            } else {
+                holder.cb.setVisibility(CheckBox.GONE);
+            }
 
 //            if (imageList.get(position).length() > 0) {
 //                if (!imageList.get(position).subSequence(0, 1).equals("/")) {
 //                    holder.pic.setImageURI(
 //                            Uri.parse(MyApplication.baseIp + "/pictures/mid/" + imageList.get(position)));
 //                } else {
-            holder.pic.setImageURI(Uri.parse("file:///" + imageList.get(position).path));
+            int width1 = 50, height1 = 50;
+            ImageRequest request = ImageRequestBuilder.newBuilderWithSource(Uri.parse("file:///" + MyPhotoActivity.mImageList.get(position)))
+                    .setResizeOptions(new ResizeOptions(width1, height1))
+                    .build();
+            PipelineDraweeController controller = (PipelineDraweeController) Fresco.newDraweeControllerBuilder()
+                    .setOldController(holder.pic.getController())
+                    .setImageRequest(request)
+                    .build();
+            holder.pic.setController(controller);
+//            holder.pic.setImageURI(Uri.parse("file:///" + mImageList.get(position)));
 //                }
 //            }
         }

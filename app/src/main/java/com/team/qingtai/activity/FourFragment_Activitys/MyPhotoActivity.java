@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
+import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
@@ -43,12 +44,15 @@ public class MyPhotoActivity extends Activity {
     protected static final int UPDATEIMAGE = 0;
     private static final int GET_PHOTO = 1;
     private RequestQueue requestQueue;
-    private List<ImageItem> imageList = new ArrayList<>();// 用来保存展示图片的地址
-    private List<String> deleteImage = new ArrayList<>();// 用来保存需要删除的图片地址
+    public static List<String> mImageList = new ArrayList<>();// 用来保存展示图片的地址
+    public static List<ImageItem> imageResult = new ArrayList<>();// 用来保存展示图片的地址
+    public static List<String> deleteImage = new ArrayList<>();// 用来保存需要删除的图片地址
     private List<String> updateImage = new ArrayList<>();// 用来保存要上传的图片；
     private Boolean isDelete;
     private float density;
     private ImageItem imageItem;
+    private ImagePicker imagePicker;
+    private CheckBox cb;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,49 +69,49 @@ public class MyPhotoActivity extends Activity {
     }
 
     private void initImagePicker() {
-        ImagePicker imagePicker = ImagePicker.getInstance();
+        imagePicker = ImagePicker.getInstance();
         imagePicker.setImageLoader(new GlideImageLoader());   //设置图片加载器
         imagePicker.setShowCamera(true);  //显示拍照按钮
         imagePicker.setCrop(true);        //允许裁剪（单选才有效）
         imagePicker.setSaveRectangle(true); //是否按矩形区域保存
-        imagePicker.setSelectLimit(9);    //选中数量限制
+        imagePicker.setSelectLimit(8);    //选中数量限制
         imagePicker.setStyle(CropImageView.Style.RECTANGLE);  //裁剪框的形状
         imagePicker.setFocusWidth(800);   //裁剪框的宽度。单位像素（圆形自动取宽高最小值）
         imagePicker.setFocusHeight(800);  //裁剪框的高度。单位像素（圆形自动取宽高最小值）
-        imagePicker.setOutPutX(1000);//保存文件的宽度。单位像素
-        imagePicker.setOutPutY(1000);//保存文件的高度。单位像素
+        imagePicker.setOutPutX(200);//保存文件的宽度。单位像素
+        imagePicker.setOutPutY(200);//保存文件的高度。单位像素
     }
 
     private void initListener() {
         finish.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MyPhotoActivity.this, ImageGridActivity.class);
-                startActivityForResult(intent, GET_PHOTO);
                 // TODO Auto-generated method stub
-//                if (finish.getText().equals("编辑")) {
-//                    if (imageList.size() >=0) {
-//                        isDelete = true;
-//                        sendMessage.setText("确定删除");
-//                        sendMessage.setVisibility(View.VISIBLE);
-//                        finish.setText("取消");
-////                        adapter.notifyDataSetChanged();
-//                    } else {
-//                        Toast.makeText(MyPhotoActivity.this, "没有可删除的照片。。", Toast.LENGTH_SHORT).show();
-//                    }
-//                } else if (finish.getText().equals("取消")) {
-////                    if (updateImage.size() > 0) {
-////                        for (int i = 0; i < updateImage.size(); i++) {
-////                            if (imageList.contains(updateImage.get(i))) {
-////                                imageList.remove(updateImage.get(i));
-////                            }
-////                        }
-////                    }
-//                    finish.setText("编辑");
-//                    sendMessage.setVisibility(View.GONE);
-////                    adapter.notifyDataSetChanged();
-//                    isDelete = false;
-//                }
+                if (finish.getText().equals("编辑")) {
+                    if (mImageList.size() > 1) {
+                        finish.setText("取消");
+                        sendMessage.setText("确定删除");
+                        sendMessage.setVisibility(View.VISIBLE);
+                        MyPhotoActivity_GridViewAdapter.isDelete = true;
+                        adapter.notifyDataSetChanged();
+                    } else {
+                        Toast.makeText(MyPhotoActivity.this, "没有可编辑的照片。。", Toast.LENGTH_SHORT).show();
+                    }
+                } else if (finish.getText().equals("取消")) {
+                    if (updateImage.size() > 0) {
+                        while (updateImage.size() > 0) {
+                            if (mImageList.contains(updateImage.get(updateImage.size() - 1))) {
+                                mImageList.remove(updateImage.get(updateImage.size() - 1));
+                                updateImage.remove(updateImage.size() - 1);
+                            }
+                        }
+                        Log.e("size", updateImage.size() + "");
+                    }
+                    finish.setText("编辑");
+                    sendMessage.setVisibility(View.GONE);
+                    MyPhotoActivity_GridViewAdapter.isDelete = false;
+                    adapter.notifyDataSetChanged();
+                }
             }
         });
         gv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -116,31 +120,34 @@ public class MyPhotoActivity extends Activity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 // TODO Auto-generated method stub
                 if (position == 0) {
-                    if (imageList.size() < 9) {
+                    if (mImageList.size() < 9) {
 //                        Intent intent = new Intent(mexiangce.this, GetImageActivity.class);
 //                        Custom.picsize = (9 - imageList.size());
 //                        startActivityForResult(intent, GET_PHOTO);
+                        isDelete = false;
+                        imagePicker.setSelectLimit(9 - mImageList.size());    //选中数量限制
                         Intent intent = new Intent(MyPhotoActivity.this, ImageGridActivity.class);
                         startActivityForResult(intent, GET_PHOTO);
                     } else {
-                        Toast.makeText(myapplication, "最多8张图片", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(MyPhotoActivity.this, "最多8张图片", Toast.LENGTH_SHORT).show();
                     }
                 } else {
-//                    CheckBox ck = (CheckBox) view.findViewById(R.id.deletePic1);
-//                    if (isDelete) {
+                    cb = (CheckBox) view.findViewById(R.id.deletePic1);
+                    //删除状态
+                    if (isDelete) {
 //                        String rtd = imageList.get(position).path;
-//                        if (ck.isChecked()) {
-//                            ck.setChecked(false);
-//                        } else {
-//                            ck.setChecked(true);
-//                        }
-//
-//                        if (!deleteImage.contains(rtd)) {
-//                            deleteImage.add(imageList.get(position));
-//                        } else {
-//                            deleteImage.remove(imageList.get(position));
-//                        }
-//                    } else {
+                        if (cb.isChecked()) {
+                            cb.setChecked(false);
+                        } else {
+                            cb.setChecked(true);
+                        }
+                        if (!deleteImage.contains(mImageList.get(position))) {
+                            deleteImage.add(mImageList.get(position));
+                        } else {
+                            deleteImage.remove(mImageList.get(position));
+                        }
+                    } else {
+                        //非删除状态
 //                        //Custom.picsize = 9;
 ////                        Intent intent = new Intent(mexiangce.this, ScanBlogImageActivity.class);
 ////                        imageList.remove("null");
@@ -149,15 +156,58 @@ public class MyPhotoActivity extends Activity {
 ////                        startActivity(intent);
 ////                        imageList.add(0, "null");
 //                    }
+                        Toast.makeText(MyPhotoActivity.this, "查看照片！！", Toast.LENGTH_SHORT).show();
+                    }
                 }
+            }
+        });
+
+        sendMessage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // TODO Auto-generated method stub
+                Log.d("nuanbaotext", "deleteImage:" + deleteImage.toString());
+                if (sendMessage.getText().equals("确定删除") || sendMessage.getText().equals("重新删除")) {
+                    if (deleteImage.size() > 0) {
+//                        String deleteString = new String();
+//                        for (String str : deleteImage) {
+//                            if (str == null) {
+//                                continue;
+//                            }
+//                            String[] getarray = str.split("\\.");
+//                            deleteString = deleteString + getarray[0] + ",";
+//
+//                        }
+//                        deleteString = deleteString.replace("null", "");
+//                        Log.d("nuanbaotext", "deleteString:" + deleteString.toString());
+//                        mProgressDialog = CustomProgressDlg.show(mexiangce.this, "正在删除...", false, null);
+//                        mProgressDialog.setCanceledOnTouchOutside(false);
+//                        deleteImage(deleteString);
+//                        sendMessage.setVisibility(View.GONE);
+                        for (String path : deleteImage) {
+                            Log.e("asdsad", path);
+                        }
+                    } else {
+                        Toast.makeText(MyPhotoActivity.this, "请选择要删除的照片。。", Toast.LENGTH_SHORT).show();
+                    }
+                }
+                if (sendMessage.getText().equals("上传图片") || sendMessage.getText().equals("重新上传")) {
+//                    isDelete = false;
+//                    if (updateImage.size() > 0) {
+//                        uploadavatarImgae(updateImage);
+//                        mProgressDialog = CustomProgressDlg.show(mexiangce.this, "正在上传...", false, null);
+//                        mProgressDialog.setCanceledOnTouchOutside(false);
+//                    }
+//                    sendMessage.setVisibility(View.GONE);
+                }
+
             }
         });
     }
 
     private void initData() {
         imageItem = new ImageItem();
-        imageItem.width = R.drawable.add_image;
-        imageList.add(0, imageItem);
+        mImageList.add(0, "res://" + MyPhotoActivity.this.getPackageName() + "/" + R.drawable.add_image);
     }
 
     private void initView() {
@@ -165,7 +215,7 @@ public class MyPhotoActivity extends Activity {
         gv = (GridView) findViewById(R.id.main_gridView);
         gv.setColumnWidth(width / 3);
         gv.setMinimumHeight((int) (width + 10 * density));
-        adapter = new MyPhotoActivity_GridViewAdapter(this, (ArrayList<ImageItem>) imageList, width);
+        adapter = new MyPhotoActivity_GridViewAdapter(this, width);
         gv.setAdapter(adapter);
         back = (RelativeLayout) findViewById(R.id.addinformationback);
         title = (TextView) findViewById(R.id.addinformationtitle);
@@ -186,9 +236,23 @@ public class MyPhotoActivity extends Activity {
         super.onActivityResult(requestCode, resultCode, data);
         if (resultCode == ImagePicker.RESULT_CODE_ITEMS) {
             if (data != null && requestCode == GET_PHOTO) {
-                imageList = (ArrayList<ImageItem>) data.getSerializableExtra(ImagePicker.EXTRA_RESULT_ITEMS);
-                if(imageList.size()>0){
-                    adapter.setImageList(imageList);
+                imageResult = (ArrayList<ImageItem>) data.getSerializableExtra(ImagePicker.EXTRA_RESULT_ITEMS);
+                for (ImageItem result : imageResult) {
+//                    mImageList.add(result.path);
+                    Log.e("adasd", result.size + "");
+                }
+                if (imageResult.size() > 0) {
+                    for (ImageItem result : imageResult) {
+                        mImageList.add(result.path);
+                        updateImage.add(result.path);
+                        Log.e("adasd", result.size + "");
+                        Log.e("adasd", updateImage.toArray() + "");
+                    }
+                    finish.setText("取消");
+                    isDelete = false;
+                    sendMessage.setVisibility(View.VISIBLE);
+                    sendMessage.setText("上传图片");
+                    adapter.notifyDataSetChanged();
                 }
             } else {
                 Toast.makeText(this, "没有数据", Toast.LENGTH_SHORT).show();
