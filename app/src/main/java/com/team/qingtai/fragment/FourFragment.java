@@ -15,7 +15,9 @@ import android.widget.RelativeLayout;
 import com.facebook.drawee.backends.pipeline.Fresco;
 import com.facebook.drawee.view.SimpleDraweeView;
 import com.team.qingtai.R;
+import com.team.qingtai.activity.FourFragment_Activitys.GuanLianTa;
 import com.team.qingtai.activity.FourFragment_Activitys.MyPhotoActivity;
+import com.team.qingtai.activity.FourFragment_Activitys.settingActivity;
 
 import java.util.ArrayList;
 
@@ -72,15 +74,15 @@ public class FourFragment extends Fragment implements View.OnClickListener {
     public void onClick(View v) {
         // TODO Auto-generated method stub
         switch (v.getId()) {
-//            case R.id.meR2:
+            case R.id.meR2:
 //                if (myapp.getIsLoad()) {
-//                    Intent intent1 = new Intent(getActivity(), GuanLianTa.class);
-//                    intent1.putExtra("fromwhere", "native");
-//                    startActivity(intent1);
+                    Intent intent1 = new Intent(getActivity(), GuanLianTa.class);
+                    intent1.putExtra("fromwhere", "native");
+                    startActivity(intent1);
 //                } else {
 //                    notload();
 //                }
-//                break;
+                break;
             case R.id.meR3:
 //                if (myapp.getIsLoad()) {
                 Intent intent2 = new Intent(getActivity(), MyPhotoActivity.class);
@@ -103,14 +105,14 @@ public class FourFragment extends Fragment implements View.OnClickListener {
 //                    notload();
 //                }
 //                break;
-//            case R.id.meR6:
+            case R.id.meR5:
 //                if (myapp.getIsLoad()) {
-//                    Intent intent4 = new Intent(getActivity(), settingactivity.class);
-//                    startActivity(intent4);
+                    Intent intent4 = new Intent(getActivity(), settingActivity.class);
+                    startActivity(intent4);
 //                } else {
 //                    notload();
 //                }
-//                break;
+                break;
 //            case R.id.viewiner4change:
 //                if (myapp.getIsLoad()) {
 //                    Intent intent5 = new Intent(getActivity(), meInfor.class);

@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/back">
+
+    <include layout="@layout/title" />
+
+    <ImageView
+        android:id="@+id/guanlianlogo"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="60dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/logo" />
+
+    <TextView
+        android:id="@+id/guanyuname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/guanlianlogo"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="5dp"
+        android:text="青苔"
+        android:textColor="@color/TextColor"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/version"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/guanyuname"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="5dp"
+        android:text="版本：V2.0"
+        android:textColor="@color/TextColor"
+        android:textSize="14sp" />
+
+    <LinearLayout
+        android:id="@+id/guanyuappbottom"
+        android:layout_width="match_parent"
+        android:layout_height="255dp"
+        android:layout_below="@id/version"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/corner"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/guanyupingfen"
+            android:layout_width="match_parent"
+            android:layout_height="49.8dp"
+            android:background="@drawable/corner">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:gravity="left|center_vertical"
+                android:paddingLeft="20dp"
+                android:text="给我评分"
+                android:textColor="@color/TextColor"
+                android:textSize="14sp" />
+
+            <ImageView
+                android:layout_width="14dp"
+                android:layout_height="14dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="20dp"
+                android:scaleType="center"
+                android:src="@drawable/arrowright" />
+        </RelativeLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_centerHorizontal="true"
+            android:background="#FFE1E1E1" />
+
+        <RelativeLayout
+            android:id="@+id/ourweibo"
+            android:layout_width="match_parent"
+            android:layout_height="49.8dp"
+            android:background="@drawable/corner">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentLeft="true"
+                android:gravity="center"
+                android:paddingLeft="20dp"
+                android:text="官方微信"
+                android:textColor="@color/TextColor"
+                android:textSize="14sp" />
+
+            <ImageView
+                android:layout_width="14dp"
+                android:layout_height="14dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="20dp"
+                android:scaleType="center"
+                android:src="@drawable/arrowright" />
+        </RelativeLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_centerHorizontal="true"
+            android:background="#FFE1E1E1" />
+
+        <RelativeLayout
+            android:id="@+id/ourweixin"
+            android:layout_width="match_parent"
+            android:layout_height="49.8dp"
+            android:background="@drawable/corner">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentLeft="true"
+                android:gravity="center"
+                android:paddingLeft="20dp"
+                android:text="官方微博"
+                android:textColor="@color/TextColor"
+                android:textSize="14sp" />
+
+            <ImageView
+                android:layout_width="14dp"
+                android:layout_height="14dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="20dp"
+                android:scaleType="center"
+                android:src="@drawable/arrowright" />
+        </RelativeLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_centerHorizontal="true"
+            android:background="#FFE1E1E1" />
+
+        <RelativeLayout
+            android:id="@+id/versionupdate"
+            android:layout_width="match_parent"
+            android:layout_height="49.8dp"
+            android:background="@drawable/corner">
+
+            <TextView
+                android:id="@+id/versiontv"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentLeft="true"
+                android:gravity="center"
+                android:paddingLeft="20dp"
+                android:text="版本更新"
+                android:textColor="@color/TextColor"
+                android:textSize="14sp" />
+
+            <ImageView
+                android:layout_width="14dp"
+                android:layout_height="14dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="20dp"
+                android:scaleType="center"
+                android:src="@drawable/arrowright" />
+        </RelativeLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_centerHorizontal="true"
+            android:background="#FFE1E1E1" />
+
+        <RelativeLayout
+            android:id="@+id/userxieyi"
+            android:layout_width="match_parent"
+            android:layout_height="49.8dp"
+            android:background="@drawable/corner">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentLeft="true"
+                android:gravity="center"
+                android:paddingLeft="20dp"
+                android:text="使用协议"
+                android:textColor="@color/TextColor"
+                android:textSize="14sp" />
+
+            <ImageView
+                android:layout_width="14dp"
+                android:layout_height="14dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="20dp"
+                android:scaleType="center"
+                android:src="@drawable/arrowright" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="30dp"
+        android:gravity="center"
+        android:text="官方QQ: 3322053240 \n官方邮箱: 3322053240@qq.com\nCopyRight©2015-2016"
+        android:textColor="@color/TextColor"
+        android:textSize="12sp" />
+
+</RelativeLayout>

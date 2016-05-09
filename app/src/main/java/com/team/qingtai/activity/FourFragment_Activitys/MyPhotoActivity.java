@@ -13,7 +13,6 @@ import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.GridView;
-import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -53,6 +52,7 @@ public class MyPhotoActivity extends Activity {
     private ImageItem imageItem;
     private ImagePicker imagePicker;
     private CheckBox cb;
+    private int flag = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,7 +65,28 @@ public class MyPhotoActivity extends Activity {
         initDensity();
         initData();
         initView();
-        initListener();
+        setListener();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Log.e("asdsa", "出来啦！！");
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        Log.e("asdsa", "消失啦！！");
+
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        mImageList.clear();
+        updateImage.clear();
+        deleteImage.clear();
     }
 
     private void initImagePicker() {
@@ -82,7 +103,18 @@ public class MyPhotoActivity extends Activity {
         imagePicker.setOutPutY(200);//保存文件的高度。单位像素
     }
 
-    private void initListener() {
+    private void setListener() {
+        back.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                // TODO Auto-generated method stub
+                mImageList.clear();
+                updateImage.clear();
+                deleteImage.clear();
+                finish();
+            }
+        });
         finish.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -200,7 +232,6 @@ public class MyPhotoActivity extends Activity {
 //                    }
 //                    sendMessage.setVisibility(View.GONE);
                 }
-
             }
         });
     }

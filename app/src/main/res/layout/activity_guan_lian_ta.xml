@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include
+        layout="@layout/title" />
+
+    <com.facebook.drawee.view.SimpleDraweeView xmlns:fresco="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/myerweima"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="110dp"
+        android:clickable="true"
+        android:scaleType="centerCrop"
+        fresco:actualImageScaleType="centerCrop"
+        fresco:failureImage="@drawable/pictures_error"
+        fresco:failureImageScaleType="centerCrop"
+        fresco:placeholderImage="@drawable/pictures_no"
+        fresco:placeholderImageScaleType="centerCrop"
+        fresco:roundAsCircle="true"
+        fresco:roundingBorderColor="@color/white"
+        fresco:roundingBorderWidth="2dp" />
+
+    <ImageView
+        android:id="@+id/guanlianbridage"
+        android:layout_width="50dp"
+        android:layout_height="30dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="135dp"
+        android:layout_toRightOf="@+id/myerweima"
+        android:scaleType="centerInside"
+        android:src="@drawable/guanlianbridage" />
+
+    <com.facebook.drawee.view.SimpleDraweeView xmlns:fresco="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/othererweima"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_alignTop="@id/myerweima"
+        android:layout_marginLeft="30dp"
+        android:layout_toRightOf="@id/guanlianbridage"
+        android:scaleType="centerCrop"
+        fresco:actualImageScaleType="centerCrop"
+        fresco:failureImage="@drawable/initavatar"
+        fresco:failureImageScaleType="centerCrop"
+        fresco:placeholderImage="@drawable/initavatar"
+        fresco:placeholderImageScaleType="centerCrop"
+        fresco:roundAsCircle="true"
+        fresco:roundingBorderColor="@color/white"
+        fresco:roundingBorderWidth="2dp" />
+
+    <TextView
+        android:id="@+id/pipeita"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="30dp"
+        android:layout_marginTop="10dp"
+        android:gravity="center_horizontal"
+        android:text="通过右上角的扫一扫功能，可以和对方建立关联，并同步共享姨妈日期"
+        android:textColor="@color/textColor"
+        android:textSize="12sp" />
+
+    <Button
+        android:id="@+id/cancelMatch"
+        android:layout_width="290dp"
+        android:layout_height="40dp"
+        android:layout_below="@id/myerweima"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="100dp"
+        android:background="@drawable/corner4"
+        android:text="解除关联"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:visibility="gone"></Button>
+
+    <Button
+        android:id="@+id/waitMatch"
+        android:layout_width="240dp"
+        android:layout_height="40dp"
+        android:layout_below="@id/myerweima"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="100dp"
+        android:background="@drawable/corner4"
+        android:text="等待对方同意关联"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:visibility="gone"></Button>
+
+    <Button
+        android:id="@+id/refuseMatch"
+        android:layout_width="290dp"
+        android:layout_height="40dp"
+        android:layout_below="@+id/agreeMatch"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/corner4"
+        android:text="拒绝关联"
+        android:textColor="@color/white"
+        android:textSize="16sp" />
+
+    <Button
+        android:id="@+id/agreeMatch"
+        android:layout_width="290dp"
+        android:layout_height="40dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="280dp"
+        android:background="@drawable/corner4"
+        android:text="同意关联"
+        android:textColor="@color/white"
+        android:textSize="16sp" />
+
+</RelativeLayout>

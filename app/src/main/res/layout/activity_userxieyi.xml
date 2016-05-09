@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/back" >
+
+    <include
+        android:id="@+id/pagertop"
+        layout="@layout/title" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/pagertop"
+        android:layout_marginTop="5dp" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="490dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:background="@drawable/corner"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/pagertitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="14dp"
+                android:paddingTop="8dp"
+                android:textColor="#FF4A4A4A"
+                android:textSize="16sp" >
+            </TextView>
+
+            <TextView
+                android:id="@+id/pagerfrom"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:paddingLeft="14dp"
+                android:paddingRight="14dp"
+                android:textColor="#FF979797"
+                android:textSize="14sp" >
+            </TextView>
+
+            <TextView
+                android:id="@+id/pagerestop"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:paddingLeft="14dp"
+                android:paddingRight="14dp"
+                android:textColor="#FF4A4A4A"
+                android:textSize="14sp" >
+            </TextView>
+
+            <ImageView
+                android:id="@+id/pagerimage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="14dp"
+                android:layout_marginRight="14dp"
+                android:layout_marginTop="15dp"
+                android:scaleType="centerCrop"
+                android:layout_gravity="center">
+            </ImageView>
+
+            <TextView
+                android:id="@+id/pageresbottom1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:paddingLeft="14dp"
+                android:paddingRight="14dp"
+                android:textColor="#FF4A4A4A"
+                android:textSize="14sp" >
+            </TextView>
+
+            <TextView
+                android:id="@+id/pageresbottom2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:paddingLeft="14dp"
+                android:paddingRight="14dp"
+                android:textColor="#FF4A4A4A"
+                android:textSize="14sp" >
+            </TextView>
+
+            <TextView
+                android:id="@+id/pageresbottom3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:paddingLeft="14dp"
+                android:paddingRight="14dp"
+                android:textColor="#FF4A4A4A"
+                android:textSize="14sp" >
+            </TextView>
+
+            <TextView
+                android:id="@+id/pageresbottom4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:lineSpacingExtra="2dp"
+                android:lineSpacingMultiplier="1"
+                android:paddingLeft="14dp"
+                android:paddingRight="14dp"
+                android:textColor="#FF4A4A4A"
+                android:textSize="14sp" >
+            </TextView>
+
+            <TextView
+                android:id="@+id/pageresbottom5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp"
+                android:paddingLeft="14dp"
+                android:paddingRight="14dp"
+                android:textColor="#FF4A4A4A"
+                android:textSize="14sp" >
+            </TextView>
+
+            <TextView
+                android:id="@+id/pageresbottom6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:lineSpacingExtra="2dp"
+                android:lineSpacingMultiplier="1"
+                android:paddingLeft="14dp"
+                android:paddingRight="14dp"
+                android:textColor="#FF4A4A4A"
+                android:textSize="14sp" >
+            </TextView>
+
+            <TextView
+                android:id="@+id/pageresbottom7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp"
+                android:paddingLeft="14dp"
+                android:paddingRight="14dp"
+                android:textColor="#FF4A4A4A"
+                android:textSize="14sp" >
+            </TextView>
+
+            <TextView
+                android:id="@+id/pageresbottom8"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:lineSpacingExtra="2dp"
+                android:lineSpacingMultiplier="1"
+                android:paddingLeft="14dp"
+                android:paddingRight="14dp"
+                android:textColor="#FF4A4A4A"
+                android:textSize="14sp" >
+            </TextView>
+
+            <ImageView
+                android:id="@+id/pagerbottomimage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="14dp"
+                android:layout_marginRight="14dp"
+                android:layout_marginTop="15dp"
+                android:scaleType="centerCrop"
+                android:layout_gravity="center" >
+            </ImageView>
+
+            <TextView
+                android:id="@+id/pageresbottom9"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp"
+                android:paddingLeft="14dp"
+                android:paddingRight="14dp"
+                android:textColor="#FF4A4A4A"
+                android:textSize="14sp" >
+            </TextView>
+
+            <TextView
+                android:id="@+id/pageresbottom10"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:paddingLeft="14dp"
+                android:paddingRight="14dp"
+                android:textColor="#FF4A4A4A"
+                android:textSize="14sp" >
+            </TextView>
+
+            <TextView
+                android:id="@+id/pageresbottom11"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp"
+                android:paddingLeft="14dp"
+                android:paddingRight="14dp"
+                android:textColor="#FF4A4A4A"
+                android:textSize="14sp" >
+            </TextView>
+
+            <TextView
+                android:id="@+id/pageresbottom12"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:paddingLeft="14dp"
+                android:paddingRight="14dp"
+                android:textColor="#FF4A4A4A"
+                android:textSize="14sp" >
+            </TextView>
+            <TextView
+                android:id="@+id/pageresbottom13"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:paddingLeft="14dp"
+                android:paddingRight="14dp"
+                android:textColor="#FF4A4A4A"
+                android:textSize="14sp" >
+            </TextView>
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>

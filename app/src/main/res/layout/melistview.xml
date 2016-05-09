@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="50.8dp"
+    android:background="@drawable/corner"
+    android:gravity="center">
+
+    <TextView
+        android:id="@+id/melistviewname"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="18dp"
+        android:gravity="center"
+        android:text="账号设置"
+        android:textColor="#8C000000"
+        android:textSize="14sp" />
+
+    <ImageView
+        android:layout_width="14dp"
+        android:layout_height="14dp"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="20dp"
+        android:scaleType="centerInside"
+        android:src="@drawable/arrowright"></ImageView>
+
+    <TextView
+        android:id="@+id/melistviewjiange"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:background="#FFE1E1E1" />
+</RelativeLayout>

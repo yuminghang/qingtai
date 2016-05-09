@@ -21,6 +21,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 
+import com.facebook.drawee.backends.pipeline.Fresco;
 import com.facebook.drawee.view.SimpleDraweeView;
 import com.team.qingtai.R;
 import com.team.qingtai.activity.Twofragment_Activitys.fortest;
@@ -50,6 +51,8 @@ public class TwoFragment extends Fragment implements View.OnClickListener {
     public View onCreateView(LayoutInflater inflater,
                              @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         // TODO Auto-generated method stub
+        Fresco.initialize(getActivity());
+
         View view = inflater.inflate(R.layout.twofragment_layout, container, false);
         viewPager = (MyViewPager) view.findViewById(R.id.ViewPagershows);
         tv1 = (SimpleDraweeView) view.findViewById(R.id.view21);

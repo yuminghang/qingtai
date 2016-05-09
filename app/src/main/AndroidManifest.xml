@@ -50,7 +50,13 @@
         <activity android:name=".activity.Twofragment_Activitys.page3" />
         <activity android:name=".activity.ThreeFragment_Activitys.ArticleActivity" />
         <activity android:name=".activity.ThreeFragment_Activitys.WebviewActivity" />
-        <activity android:name=".activity.FourFragment_Activitys.MyPhotoActivity"></activity>
+        <activity android:name=".activity.FourFragment_Activitys.MyPhotoActivity" />
+        <activity android:name=".activity.FourFragment_Activitys.GuanLianTa" />
+        <activity android:name=".activity.FourFragment_Activitys.settingActivity" />
+        <activity android:name=".activity.FourFragment_Activitys.guanyuapp" />
+        <activity android:name=".activity.FourFragment_Activitys.feedback" />
+        <activity android:name=".activity.FourFragment_Activitys.ouraddressconnect" />
+        <activity android:name=".activity.FourFragment_Activitys.userxieyi"></activity>
     </application>
 
 </manifest>

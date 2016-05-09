@@ -70,9 +70,9 @@ public class MyPhotoActivity_GridViewAdapter extends BaseAdapter {
             holder = (ViewHolder) convertView.getTag();
         }
         if (position == 0) {
-            int width1 = 50, height1 = 50;
+            int width2 = 50, height2 = 50;
             ImageRequest request = ImageRequestBuilder.newBuilderWithSource(Uri.parse(MyPhotoActivity.mImageList.get(position)))
-                    .setResizeOptions(new ResizeOptions(width1, height1))
+                    .setResizeOptions(new ResizeOptions(width2, height2))
                     .build();
             PipelineDraweeController controller = (PipelineDraweeController) Fresco.newDraweeControllerBuilder()
                     .setOldController(holder.pic.getController())
