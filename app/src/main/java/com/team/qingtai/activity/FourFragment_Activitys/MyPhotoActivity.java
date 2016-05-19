@@ -27,11 +27,12 @@ import com.lzy.imagepicker.view.CropImageView;
 import com.team.qingtai.MyApplication;
 import com.team.qingtai.R;
 import com.team.qingtai.adapter.MyPhotoActivity_GridViewAdapter;
+import com.team.qingtai.base.BaseActivity;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class MyPhotoActivity extends Activity {
+public class MyPhotoActivity extends BaseActivity {
     private int width;
     private GridView gv;
     private RelativeLayout back;
@@ -57,9 +58,7 @@ public class MyPhotoActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_my_photo);
-        MyApplication.getInstance().addActivity(this);
         Fresco.initialize(this);
         initImagePicker();
         initDensity();

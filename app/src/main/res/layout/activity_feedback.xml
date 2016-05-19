@@ -1,56 +1,103 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/back" >
+    android:background="@color/back"
+    android:orientation="vertical">
 
     <include layout="@layout/title" />
 
-    <TextView
-        android:id="@+id/feedBacktitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="70dp"
-        android:text="你有什么意见和建议?"
-        android:textColor="@color/TextColor"
-        android:textSize="16sp"
-        android:layout_marginLeft="15dp" >
-    </TextView>
-
-    <EditText
-        android:id="@+id/feeBackquestion"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="21.1dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:hint="你的主题:"
-        android:lines="2"
-        android:paddingLeft="5dp"
-        android:textColor="@color/TextColor"
-        android:layout_below="@id/feedBacktitle"
-        android:textSize="14sp"
-        android:background="@drawable/corner"
-        />
+        android:orientation="horizontal"
+        android:layout_marginTop="15dp"
+        android:layout_gravity="center_vertical"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp">
+
+        <TextView
+            android:id="@+id/fragmenttest_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:text="反馈类型"
+            android:textColor="#ff21baaa"/>
+
+        <RadioGroup
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginLeft="20dp">
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:button="@null"
+                android:text="类型1"
+                android:textColor="@drawable/color_radiobutton"
+                android:background="@drawable/radio_group_selector"/>
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:button="@null"
+                android:text="类型2"
+                android:textColor="@drawable/color_radiobutton"
+                android:background="@drawable/radio_group_selector"/>
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:button="@null"
+                android:text="类型3"
+                android:textColor="@drawable/color_radiobutton"
+                android:background="@drawable/radio_group_selector"/>
+
+        </RadioGroup>
+
+    </LinearLayout>
+
 
     <EditText
-        android:id="@+id/feeBackanswer"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
+        android:layout_height="200dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:gravity="top"
+        android:background="@drawable/editsharp"
+        android:hint="请输入意见"
+        android:textSize="16sp"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_gravity="center_horizontal"
         android:layout_marginTop="10dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:hint="你的意见是我们进步的源泉..."
-        android:paddingTop="11dp"
-        android:textColor="@color/TextColor"
-        android:lines="10"
-        android:paddingLeft="5dp"
-        android:gravity="left|top"
-        android:layout_below="@id/feeBackquestion"
-        android:textSize="14sp"
-        android:background="@drawable/corner"  />
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/editsharp"
+        android:hint="请留下联系方式"
+        android:textSize="16sp"/>
+
+    <Button
+        android:id="@+id/feedbacksubmit"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:text="提交"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/corner4"
+        android:textColor="#ffffff"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"
+        android:textSize="16sp"
+        ></Button>
 
 
     <TextView
@@ -61,25 +108,10 @@
         android:layout_marginRight="10dp"
         android:textSize="12sp"
         android:text="请仔细描述你遇到的问题，有助于我们快速定位并解决问题，或者留下您宝贵的建议和意见，我们会认真进行评估。"
-        android:layout_below="@id/feeBackanswer"
         android:layout_marginTop="15dp"
         android:gravity="left"
         android:layout_centerHorizontal="true"
         android:textColor="#FFA0A0A0"
         />
 
-    <Button
-        android:id="@+id/feedbacksubmit"
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:text="提交"
-        android:layout_marginLeft="40dp"
-        android:layout_marginRight="40dp"
-        android:background="@drawable/corner4"
-        android:textColor="@color/white"
-        android:layout_below="@id/feedbacktt"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="15dp"
-        android:textSize="16sp"
-        ></Button>
-</RelativeLayout>
+</LinearLayout>

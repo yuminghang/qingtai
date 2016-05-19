@@ -56,7 +56,11 @@
         <activity android:name=".activity.FourFragment_Activitys.guanyuapp" />
         <activity android:name=".activity.FourFragment_Activitys.feedback" />
         <activity android:name=".activity.FourFragment_Activitys.ouraddressconnect" />
-        <activity android:name=".activity.FourFragment_Activitys.userxieyi"></activity>
+        <activity android:name=".activity.FourFragment_Activitys.userxieyi" />
+        <activity android:name=".activity.LoginActivity" />
+        <activity android:name=".base.BaseActivity" />
+        <activity android:name=".activity.FourFragment_Activitys.MyCollectionActivity" />
+        <activity android:name=".activity.FourFragment_Activitys.ScanCollectionActivity"></activity>
     </application>
 
 </manifest>

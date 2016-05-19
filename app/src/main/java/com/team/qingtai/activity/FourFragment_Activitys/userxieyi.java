@@ -12,19 +12,18 @@ import android.widget.TextView;
 
 import com.team.qingtai.MyApplication;
 import com.team.qingtai.R;
+import com.team.qingtai.base.BaseActivity;
 
-public class userxieyi extends Activity {
+public class userxieyi extends BaseActivity {
     private TextView title, edit;
     private RelativeLayout back;
-    private TextView from, pagertop, pagerbottm1, pagerbottm4, pagerbottm3, pagerbottm5, pagerbottm6,
+    private TextView mTitle, from, pagertop, pagerbottm1, pagerbottm4, pagerbottm3, pagerbottm5, pagerbottm6,
             pagerbottm7, pagerbottm2, pagerbottm8, pagerbottm9, pagerbottm10, pagerbottm11, pagerbottm12;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_userxieyi);
-        MyApplication.getInstance().addActivity(this);
         initViews();
         setListener();
         initData();
@@ -67,9 +66,9 @@ public class userxieyi extends Activity {
                     String n2, String n3, String n4, String n5, String t6, String n6) {
         pagertop.setText(be);
 
-        title.setText(t);
-        title.setGravity(Gravity.CENTER);
-        title.setTypeface(Typeface.defaultFromStyle(Typeface.BOLD));
+        mTitle.setText(t);
+        mTitle.setGravity(Gravity.CENTER);
+        mTitle.setTypeface(Typeface.defaultFromStyle(Typeface.BOLD));
         from.setText(aut);
         from.setVisibility(View.GONE);
         pagerbottm1.setText(t1);
@@ -122,6 +121,7 @@ public class userxieyi extends Activity {
         title.setVisibility(View.GONE);
         edit = (TextView) findViewById(R.id.addinformationset);
         edit.setVisibility(View.GONE);
+        mTitle = (TextView) findViewById(R.id.pagertitle);
         back = (RelativeLayout) findViewById(R.id.addinformationback);
         from = (TextView) findViewById(R.id.pagerfrom);
         pagertop = (TextView) findViewById(R.id.pagerestop);

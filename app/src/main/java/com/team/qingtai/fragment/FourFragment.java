@@ -16,8 +16,10 @@ import com.facebook.drawee.backends.pipeline.Fresco;
 import com.facebook.drawee.view.SimpleDraweeView;
 import com.team.qingtai.R;
 import com.team.qingtai.activity.FourFragment_Activitys.GuanLianTa;
+import com.team.qingtai.activity.FourFragment_Activitys.MyCollectionActivity;
 import com.team.qingtai.activity.FourFragment_Activitys.MyPhotoActivity;
 import com.team.qingtai.activity.FourFragment_Activitys.settingActivity;
+import com.team.qingtai.activity.LoginActivity;
 
 import java.util.ArrayList;
 
@@ -54,6 +56,7 @@ public class FourFragment extends Fragment implements View.OnClickListener {
     public void onResume() {
         // TODO Auto-generated method stub
         updateinfor();
+        Log.e("zsdzxd", "OnResume");
         super.onResume();
     }
 
@@ -68,6 +71,7 @@ public class FourFragment extends Fragment implements View.OnClickListener {
         long meheight = para1.height;
         para1.topMargin = (int) (heigth * 1 / 3 - meheight / 2);
         headImage.setLayoutParams(para1);
+        headImage.setOnClickListener(this);
     }
 
     @Override
@@ -76,9 +80,9 @@ public class FourFragment extends Fragment implements View.OnClickListener {
         switch (v.getId()) {
             case R.id.meR2:
 //                if (myapp.getIsLoad()) {
-                    Intent intent1 = new Intent(getActivity(), GuanLianTa.class);
-                    intent1.putExtra("fromwhere", "native");
-                    startActivity(intent1);
+                Intent intent1 = new Intent(getActivity(), GuanLianTa.class);
+                intent1.putExtra("fromwhere", "native");
+                startActivity(intent1);
 //                } else {
 //                    notload();
 //                }
@@ -94,21 +98,21 @@ public class FourFragment extends Fragment implements View.OnClickListener {
 //                    notload();
 //                }
                 break;
-//            case R.id.meR4:
+            case R.id.meR4:
 //                if (myapp.getIsLoad()) {
-//                    // Intent intent3 = new
-//                    // Intent(getActivity(),otherUserZhuye.class);
-//                    Intent intent3 = new Intent(getActivity(), CollectActivity.class);
-//                    // intent3.putExtra("userId", 30);
-//                    startActivity(intent3);
+                    // Intent intent3 = new
+                    // Intent(getActivity(),otherUserZhuye.class);
+                    Intent intent3 = new Intent(getActivity(), MyCollectionActivity.class);
+                    // intent3.putExtra("userId", 30);
+                    startActivity(intent3);
 //                } else {
 //                    notload();
 //                }
-//                break;
+                break;
             case R.id.meR5:
 //                if (myapp.getIsLoad()) {
-                    Intent intent4 = new Intent(getActivity(), settingActivity.class);
-                    startActivity(intent4);
+                Intent intent4 = new Intent(getActivity(), settingActivity.class);
+                startActivity(intent4);
 //                } else {
 //                    notload();
 //                }
@@ -134,13 +138,13 @@ public class FourFragment extends Fragment implements View.OnClickListener {
 //                    notload();
 //                }
 //                break;
-//		case R.id.touxiang:
+            case R.id.touxiang:
 //			if (myapp.getIsLoad()) {
 //				Intent intent1 = new Intent(getActivity(), mezhuye.class);
 //				int id=myapp.getMyUserId();
 //				intent1.putExtra("id", id);
 //				intent1.putExtra("isme", true);
-//				startActivity(intent1);
+                startActivity(new Intent(getActivity(), LoginActivity.class));
 //			} else {
 //				notload();
 //			}

@@ -11,17 +11,16 @@ import android.widget.TextView;
 import com.facebook.drawee.backends.pipeline.Fresco;
 import com.team.qingtai.MyApplication;
 import com.team.qingtai.R;
+import com.team.qingtai.base.BaseActivity;
 
-public class GuanLianTa extends Activity {
+public class GuanLianTa extends BaseActivity {
     private TextView title, edit;
     private RelativeLayout back;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_guan_lian_ta);
-        MyApplication.getInstance().addActivity(this);
         Fresco.initialize(this);
         initViews();
         setListener();

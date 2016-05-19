@@ -48,6 +48,16 @@
             android:text="编辑"
             android:textColor="@color/white"
             android:textSize="16sp" />
-        <!--android:visibility="gone"-->
+
+        <Button
+            android:id="@+id/scan_blog_oper"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/dots"
+            android:visibility="gone" />
+
     </RelativeLayout>
 </RelativeLayout>

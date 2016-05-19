@@ -3,6 +3,10 @@ package com.team.qingtai;
 import android.app.Activity;
 import android.app.Application;
 
+import com.android.volley.RequestQueue;
+import com.android.volley.toolbox.Volley;
+import com.team.qingtai.utils.SPUtils;
+
 import java.util.LinkedList;
 import java.util.List;
 
@@ -11,10 +15,18 @@ import java.util.List;
  */
 public class MyApplication extends Application {
     private List<Activity> activityList = new LinkedList<Activity>();
+    private String cookie;
     public static MyApplication instance;
+    public static RequestQueue requestQueue;
 
     public MyApplication() {
 
+    }
+
+    @Override
+    public void onCreate() {
+        super.onCreate();
+        requestQueue = Volley.newRequestQueue(this);
     }
 
     public static MyApplication getInstance() {
@@ -34,5 +46,14 @@ public class MyApplication extends Application {
             activity.finish();
         }
         System.exit(0);
+    }
+
+    public void setcookie(String cookie) {
+        this.cookie = cookie;
+//        SPUtils.savePreference(MyApplication.getInstance(), "my_cookie", "cookie", cookie);
+    }
+
+    public String getCookie() {
+        return cookie;
     }
 }

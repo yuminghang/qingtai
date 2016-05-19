@@ -12,8 +12,9 @@ import android.widget.TextView;
 
 import com.team.qingtai.MyApplication;
 import com.team.qingtai.R;
+import com.team.qingtai.base.BaseActivity;
 
-public class ouraddressconnect extends Activity {
+public class ouraddressconnect extends BaseActivity {
     private TextView title, edit;
     private RelativeLayout back;
     private TextView nickname;
@@ -22,9 +23,7 @@ public class ouraddressconnect extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_ouraddressconnect);
-        MyApplication.getInstance().addActivity(this);
         initViews();
         setListener();
     }

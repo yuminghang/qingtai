@@ -7,13 +7,15 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
+import android.widget.BaseAdapter;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.team.qingtai.MyApplication;
 import com.team.qingtai.R;
+import com.team.qingtai.base.BaseActivity;
 
-public class guanyuapp extends Activity implements View.OnClickListener {
+public class guanyuapp extends BaseActivity implements View.OnClickListener {
     private TextView title, edit;
     private RelativeLayout back;
     private RelativeLayout xieyi, weixin, weibo, pingfen, versionupdate;
@@ -21,9 +23,7 @@ public class guanyuapp extends Activity implements View.OnClickListener {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_guanyuapp);
-        MyApplication.getInstance().addActivity(this);
         initViews();
         setListener();
     }

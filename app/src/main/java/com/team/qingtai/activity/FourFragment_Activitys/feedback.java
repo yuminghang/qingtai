@@ -1,17 +1,13 @@
 package com.team.qingtai.activity.FourFragment_Activitys;
 
-import android.app.Activity;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.view.Window;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-
-import com.team.qingtai.MyApplication;
 import com.team.qingtai.R;
+import com.team.qingtai.base.BaseActivity;
 
-public class feedback extends Activity {
+public class feedback extends BaseActivity {
     private TextView title, edit;
     private RelativeLayout back;
 
@@ -19,9 +15,7 @@ public class feedback extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_feedback);
-        MyApplication.getInstance().addActivity(this);
         initViews();
         setListener();
     }
