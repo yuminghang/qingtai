@@ -29,12 +29,12 @@ public class MyCollectionActivity_ListAdapter extends BaseAdapter {
 
     @Override
     public int getCount() {
-        return list.size();
+        return list.size() > 0 ? list.size() : 0;
     }
 
     @Override
     public Object getItem(int position) {
-        return list.get(position);
+        return list.size() > 0 ? list.get(position) : null;
     }
 
     @Override
@@ -44,15 +44,18 @@ public class MyCollectionActivity_ListAdapter extends BaseAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        View view = View.inflate(activity, R.layout.mycollectionitem, null);
-        TextView title = (TextView) view.findViewById(R.id.title);
-        TextView time = (TextView) view.findViewById(R.id.time);
-        TextView visit_num = (TextView) view.findViewById(R.id.visit_num);
-        ImageView image = (ImageView) view.findViewById(R.id.image);
-        title.setText(list.get(position).getContents());
-        time.setText(list.get(position).getCreate_time());
-        visit_num.setText("" + list.get(position).getVisit_num());
-        Glide.with(activity).load(Urls.SmallImageUrl + list.get(position).getOwner_avatar()).into(image);
-        return view;
+        if (list.size() > 0) {
+            View view = View.inflate(activity, R.layout.mycollectionitem, null);
+            TextView title = (TextView) view.findViewById(R.id.title);
+            TextView time = (TextView) view.findViewById(R.id.time);
+            TextView visit_num = (TextView) view.findViewById(R.id.visit_num);
+            ImageView image = (ImageView) view.findViewById(R.id.image);
+            title.setText(list.get(position).getContents());
+            time.setText(list.get(position).getCreate_time());
+            visit_num.setText("" + list.get(position).getVisit_num());
+            Glide.with(activity).load(Urls.SmallImageUrl + list.get(position).getOwner_avatar()).into(image);
+            return view;
+        }
+        return null;
     }
 }

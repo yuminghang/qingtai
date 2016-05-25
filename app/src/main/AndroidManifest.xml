@@ -60,7 +60,9 @@
         <activity android:name=".activity.LoginActivity" />
         <activity android:name=".base.BaseActivity" />
         <activity android:name=".activity.FourFragment_Activitys.MyCollectionActivity" />
-        <activity android:name=".activity.FourFragment_Activitys.ScanCollectionActivity"></activity>
+        <activity android:name=".activity.FourFragment_Activitys.ScanCollectionActivity" />
+        <activity android:name=".activity.FourFragment_Activitys.MyAccountSettingActivity" />
+        <activity android:name=".activity.FourFragment_Activitys.ChangePasswordActivity"></activity>
     </application>
 
 </manifest>

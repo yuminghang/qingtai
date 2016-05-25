@@ -16,8 +16,29 @@ import java.util.List;
 public class MyApplication extends Application {
     private List<Activity> activityList = new LinkedList<Activity>();
     private String cookie;
+    private int uid;
+    private boolean isLogin;
     public static MyApplication instance;
     public static RequestQueue requestQueue;
+
+    public boolean isLogin() {
+        return isLogin;
+    }
+
+    public void setIsLogin(boolean isLogin) {
+        this.isLogin = isLogin;
+    }
+
+
+
+    public int getUid() {
+        return uid;
+    }
+
+    public void setUid(int uid) {
+        this.uid = uid;
+    }
+
 
     public MyApplication() {
 
@@ -56,4 +77,5 @@ public class MyApplication extends Application {
     public String getCookie() {
         return cookie;
     }
+
 }

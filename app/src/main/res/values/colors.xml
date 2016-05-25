@@ -14,5 +14,6 @@
     <color name="little_black">#515151</color>
     <color name="almost_white">#f3f3f3</color>
     <color name="textColor">#4A4A4A</color>
+    <color name="TextLittleColor">#9B9B9B</color>
 
 </resources>

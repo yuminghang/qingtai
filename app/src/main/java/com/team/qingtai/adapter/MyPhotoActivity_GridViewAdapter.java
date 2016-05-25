@@ -16,6 +16,7 @@ import com.facebook.imagepipeline.request.ImageRequest;
 import com.facebook.imagepipeline.request.ImageRequestBuilder;
 import com.team.qingtai.R;
 import com.team.qingtai.activity.FourFragment_Activitys.MyPhotoActivity;
+import com.team.qingtai.api.Urls;
 
 
 /**
@@ -30,7 +31,6 @@ public class MyPhotoActivity_GridViewAdapter extends BaseAdapter {
         this.activity = activity;
         this.width = width;
     }
-
 
     @Override
     public int getCount() {
@@ -70,17 +70,10 @@ public class MyPhotoActivity_GridViewAdapter extends BaseAdapter {
             holder = (ViewHolder) convertView.getTag();
         }
         if (position == 0) {
-            int width2 = 50, height2 = 50;
-            ImageRequest request = ImageRequestBuilder.newBuilderWithSource(Uri.parse(MyPhotoActivity.mImageList.get(position)))
-                    .setResizeOptions(new ResizeOptions(width2, height2))
-                    .build();
-            PipelineDraweeController controller = (PipelineDraweeController) Fresco.newDraweeControllerBuilder()
-                    .setOldController(holder.pic.getController())
-                    .setImageRequest(request)
-                    .build();
-            holder.pic.setController(controller);
+            holder.pic.setImageURI(Uri.parse("res://" + activity.getPackageName() + "/" + R.drawable.add_image));
             holder.cb.setVisibility(CheckBox.GONE);
         } else {
+
             if (isDelete) {
                 holder.cb.setVisibility(CheckBox.VISIBLE);
                 holder.cb.setChecked(false);
@@ -88,23 +81,13 @@ public class MyPhotoActivity_GridViewAdapter extends BaseAdapter {
                 holder.cb.setVisibility(CheckBox.GONE);
             }
 
-//            if (imageList.get(position).length() > 0) {
-//                if (!imageList.get(position).subSequence(0, 1).equals("/")) {
-//                    holder.pic.setImageURI(
-//                            Uri.parse(MyApplication.baseIp + "/pictures/mid/" + imageList.get(position)));
-//                } else {
-            int width1 = 50, height1 = 50;
-            ImageRequest request = ImageRequestBuilder.newBuilderWithSource(Uri.parse("file:///" + MyPhotoActivity.mImageList.get(position)))
-                    .setResizeOptions(new ResizeOptions(width1, height1))
-                    .build();
-            PipelineDraweeController controller = (PipelineDraweeController) Fresco.newDraweeControllerBuilder()
-                    .setOldController(holder.pic.getController())
-                    .setImageRequest(request)
-                    .build();
-            holder.pic.setController(controller);
-//            holder.pic.setImageURI(Uri.parse("file:///" + mImageList.get(position)));
-//                }
-//            }
+            if (MyPhotoActivity.mImageList.get(position).length() > 0) {
+                if (!MyPhotoActivity.mImageList.get(position).startsWith("/")) {
+                    holder.pic.setImageURI(Uri.parse(Urls.MiddleImageUrl + MyPhotoActivity.mImageList.get(position)));
+                } else {
+                    holder.pic.setImageURI(Uri.parse("file:///" + MyPhotoActivity.mImageList.get(position)));
+                }
+            }
         }
         return convertView;
     }

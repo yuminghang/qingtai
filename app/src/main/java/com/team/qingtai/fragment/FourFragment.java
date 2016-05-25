@@ -11,9 +11,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
+import android.widget.Toast;
 
 import com.facebook.drawee.backends.pipeline.Fresco;
 import com.facebook.drawee.view.SimpleDraweeView;
+import com.team.qingtai.MyApplication;
 import com.team.qingtai.R;
 import com.team.qingtai.activity.FourFragment_Activitys.GuanLianTa;
 import com.team.qingtai.activity.FourFragment_Activitys.MyCollectionActivity;
@@ -79,43 +81,43 @@ public class FourFragment extends Fragment implements View.OnClickListener {
         // TODO Auto-generated method stub
         switch (v.getId()) {
             case R.id.meR2:
-//                if (myapp.getIsLoad()) {
-                Intent intent1 = new Intent(getActivity(), GuanLianTa.class);
-                intent1.putExtra("fromwhere", "native");
-                startActivity(intent1);
-//                } else {
-//                    notload();
-//                }
+                if (MyApplication.getInstance().isLogin()) {
+                    Intent intent1 = new Intent(getActivity(), GuanLianTa.class);
+                    intent1.putExtra("fromwhere", "native");
+                    startActivity(intent1);
+                } else {
+                    startActivity(new Intent(getActivity(), LoginActivity.class));
+                }
                 break;
             case R.id.meR3:
-//                if (myapp.getIsLoad()) {
-                Intent intent2 = new Intent(getActivity(), MyPhotoActivity.class);
+                if (MyApplication.getInstance().isLogin()) {
+                    Intent intent2 = new Intent(getActivity(), MyPhotoActivity.class);
 //                    ArrayList<String> imagePathList = new ArrayList<String>();
 //                    imagePathList.add("null");
-                // intent2.putStringArrayListExtra("paths", imagePathList);
-                startActivity(intent2);
-//                } else {
-//                    notload();
-//                }
+                    // intent2.putStringArrayListExtra("paths", imagePathList);
+                    startActivity(intent2);
+                } else {
+                    startActivity(new Intent(getActivity(), LoginActivity.class));
+                }
                 break;
             case R.id.meR4:
-//                if (myapp.getIsLoad()) {
+                if (MyApplication.getInstance().isLogin()) {
                     // Intent intent3 = new
                     // Intent(getActivity(),otherUserZhuye.class);
                     Intent intent3 = new Intent(getActivity(), MyCollectionActivity.class);
                     // intent3.putExtra("userId", 30);
                     startActivity(intent3);
-//                } else {
-//                    notload();
-//                }
+                } else {
+                    startActivity(new Intent(getActivity(), LoginActivity.class));
+                }
                 break;
             case R.id.meR5:
-//                if (myapp.getIsLoad()) {
-                Intent intent4 = new Intent(getActivity(), settingActivity.class);
-                startActivity(intent4);
-//                } else {
-//                    notload();
-//                }
+                if (MyApplication.getInstance().isLogin()) {
+                    Intent intent4 = new Intent(getActivity(), settingActivity.class);
+                    startActivity(intent4);
+                } else {
+                    startActivity(new Intent(getActivity(), LoginActivity.class));
+                }
                 break;
 //            case R.id.viewiner4change:
 //                if (myapp.getIsLoad()) {
@@ -139,15 +141,15 @@ public class FourFragment extends Fragment implements View.OnClickListener {
 //                }
 //                break;
             case R.id.touxiang:
-//			if (myapp.getIsLoad()) {
+                if (!MyApplication.getInstance().isLogin()) {
 //				Intent intent1 = new Intent(getActivity(), mezhuye.class);
 //				int id=myapp.getMyUserId();
 //				intent1.putExtra("id", id);
 //				intent1.putExtra("isme", true);
-                startActivity(new Intent(getActivity(), LoginActivity.class));
-//			} else {
-//				notload();
-//			}
+                    startActivity(new Intent(getActivity(), LoginActivity.class));
+                } else {
+                    Toast.makeText(getActivity(), "已经登录！测试用，将来再改", Toast.LENGTH_SHORT).show();
+                }
         }
     }
 }

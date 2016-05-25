@@ -76,12 +76,13 @@ public class MyCollectionActivity extends BaseActivity {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Intent intent = new Intent(MyCollectionActivity.this, ScanCollectionActivity.class);
-                Bundle bundle = new Bundle();
-                bundle.putSerializable("pos", list.get(position));
-                intent.putExtras(bundle);
-                startActivity(intent);
-                Toast.makeText(MyCollectionActivity.this, "点击了" + position, Toast.LENGTH_SHORT).show();
+//                Intent intent = new Intent(MyCollectionActivity.this, ScanCollectionActivity.class);
+//                Bundle bundle = new Bundle();
+//                bundle.putSerializable("pos", list.get(position));
+//                intent.putExtras(bundle);
+//                startActivity(intent);
+//                Toast.makeText(MyCollectionActivity.this, "点击了" + position, Toast.LENGTH_SHORT).show();
+                Toast.makeText(MyCollectionActivity.this, "点击后的页面要和社区的个人主页对接...", Toast.LENGTH_SHORT).show();
             }
         });
     }

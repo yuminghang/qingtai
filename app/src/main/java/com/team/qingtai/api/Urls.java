@@ -11,4 +11,6 @@ public class Urls {
     public static final String BigImageUrl = BaseUrl + "pictures/origin/";
     public static final String MiddleImageUrl = BaseUrl + "pictures/mid/";
     public static final String SmallImageUrl = BaseUrl + "pictures/small/";
+    public static final String GETUSER_ID_Url = BaseUrl + "user/get_user_id.php";
+    public static final String UPLOAD_Url = BaseUrl + "pic_cgis/upload_pic.php";
 }

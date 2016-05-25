@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/back">
+
+    <include
+        android:id="@+id/accountsetting"
+        layout="@layout/title" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15.5dp"
+        android:layout_marginRight="15.5dp"
+        android:layout_marginTop="103dp"
+        android:background="@drawable/corner"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/changecode"
+            android:layout_width="match_parent"
+            android:layout_height="49.8dp"
+            android:background="@drawable/corner">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="left|center_vertical"
+                android:paddingLeft="18dp"
+                android:text="修改密码"
+                android:textColor="@color/TextColor"
+                android:textSize="14sp" />
+
+            <ImageView
+                android:layout_width="14dp"
+                android:layout_height="14dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="20dp"
+                android:src="@drawable/arrowright"></ImageView>
+        </RelativeLayout>
+
+    </LinearLayout>
+</RelativeLayout>
