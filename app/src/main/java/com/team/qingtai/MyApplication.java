@@ -2,6 +2,9 @@ package com.team.qingtai;
 
 import android.app.Activity;
 import android.app.Application;
+import android.content.Context;
+import android.content.pm.PackageManager;
+import android.util.Log;
 
 import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.Volley;
@@ -20,6 +23,35 @@ public class MyApplication extends Application {
     private boolean isLogin;
     public static MyApplication instance;
     public static RequestQueue requestQueue;
+    private double version;
+
+    public double getVersion() {
+        return version;
+    }
+
+    public void setVersion(double version) {
+        this.version = version;
+    }
+
+    public static int getVerCode(Context context) {
+        int verCode = -1;
+        try {
+            verCode = context.getPackageManager().getPackageInfo("com.team.qingtai", 0).versionCode;
+        } catch (PackageManager.NameNotFoundException e) {
+            Log.e("nuanbaotext", "Version：" + e.getMessage());
+        }
+        return verCode;
+    }
+
+    public static String getVerName(Context context) {
+        String verName = "";
+        try {
+            verName = context.getPackageManager().getPackageInfo("com.team.qingtai", 0).versionName;
+        } catch (PackageManager.NameNotFoundException e) {
+            Log.e("msg", e.getMessage());
+        }
+        return verName;
+    }
 
     public boolean isLogin() {
         return isLogin;
@@ -28,7 +60,6 @@ public class MyApplication extends Application {
     public void setIsLogin(boolean isLogin) {
         this.isLogin = isLogin;
     }
-
 
 
     public int getUid() {

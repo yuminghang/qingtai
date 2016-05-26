@@ -62,7 +62,11 @@
         <activity android:name=".activity.FourFragment_Activitys.MyCollectionActivity" />
         <activity android:name=".activity.FourFragment_Activitys.ScanCollectionActivity" />
         <activity android:name=".activity.FourFragment_Activitys.MyAccountSettingActivity" />
-        <activity android:name=".activity.FourFragment_Activitys.ChangePasswordActivity"></activity>
+        <activity android:name=".activity.FourFragment_Activitys.ChangePasswordActivity" />
+        <activity android:name=".activity.FourFragment_Activitys.FindPasswordActivity" />
+        <activity android:name=".activity.FourFragment_Activitys.VerifyCodeActivity" />
+        <activity android:name=".activity.FourFragment_Activitys.NewPasswordActivity" />
+        <activity android:name=".activity.FourFragment_Activitys.MyHomePageActivity"></activity>
     </application>
 
 </manifest>

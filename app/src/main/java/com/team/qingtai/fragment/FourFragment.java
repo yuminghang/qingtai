@@ -19,6 +19,7 @@ import com.team.qingtai.MyApplication;
 import com.team.qingtai.R;
 import com.team.qingtai.activity.FourFragment_Activitys.GuanLianTa;
 import com.team.qingtai.activity.FourFragment_Activitys.MyCollectionActivity;
+import com.team.qingtai.activity.FourFragment_Activitys.MyHomePageActivity;
 import com.team.qingtai.activity.FourFragment_Activitys.MyPhotoActivity;
 import com.team.qingtai.activity.FourFragment_Activitys.settingActivity;
 import com.team.qingtai.activity.LoginActivity;
@@ -148,7 +149,8 @@ public class FourFragment extends Fragment implements View.OnClickListener {
 //				intent1.putExtra("isme", true);
                     startActivity(new Intent(getActivity(), LoginActivity.class));
                 } else {
-                    Toast.makeText(getActivity(), "已经登录！测试用，将来再改", Toast.LENGTH_SHORT).show();
+//                    Toast.makeText(getActivity(), "已经登录！测试用，将来再改", Toast.LENGTH_SHORT).show();
+                    startActivity(new Intent(getActivity(), MyHomePageActivity.class));
                 }
         }
     }

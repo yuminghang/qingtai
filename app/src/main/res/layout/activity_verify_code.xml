@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#eee">
+
+    <include layout="@layout/title" />
+
+    <EditText
+        android:id="@+id/verifycode"
+        android:layout_width="290dp"
+        android:layout_height="50dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="false"
+        android:layout_marginTop="100dp"
+        android:digits="abcdefghijklmnopqrstuvwxyz0123456789"
+        android:background="#ffffff"
+        android:hint="请输入验证码"
+        android:paddingLeft="10dp"
+        android:textColor="#778899"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/getverifycodetip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="*验证码已发送至您的邮箱"
+        android:paddingTop="10dp"
+        android:textSize="12sp"
+        android:layout_below="@id/verifycode"
+        android:layout_alignLeft="@+id/verifycode"
+        android:textColor="#000000"
+        ></TextView>
+
+    <Button
+        android:id="@+id/getverifycodeagainbutton"
+        android:layout_width="290dp"
+        android:layout_height="40dp"
+        android:layout_below="@id/getverifycodetip"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp"
+        android:text="重新获取验证码"
+        android:textColor="#ffffff"
+        android:background="#21BAAA"
+        android:textSize="18sp"
+        android:textStyle="bold" >
+    </Button>
+
+    <Button
+        android:id="@+id/confirm_verifycode"
+        android:layout_width="290dp"
+        android:layout_height="40dp"
+        android:layout_below="@id/getverifycodeagainbutton"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:text="下一步"
+        android:textColor="#ffffff"
+        android:background="#21BAAA"
+        android:textSize="18sp"
+        android:textStyle="bold" >
+    </Button>
+
+
+
+</RelativeLayout>

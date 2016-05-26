@@ -15,5 +15,6 @@
     <color name="almost_white">#f3f3f3</color>
     <color name="textColor">#4A4A4A</color>
     <color name="TextLittleColor">#9B9B9B</color>
+    <color name="viewfinder_laser">#ffff0000</color>
 
 </resources>

@@ -32,4 +32,6 @@ dependencies {
     compile 'com.lzy.widget:imagepicker:0.1.4'
     compile files('libs/zxing.jar')
     compile files('libs/glide-3.7.0.jar')
+    compile files('src/main/libs/badgeview.jar')
+    compile 'org.jbundle.util.osgi.wrapped:org.jbundle.util.osgi.wrapped.org.apache.http.client:4.1.2'
 }

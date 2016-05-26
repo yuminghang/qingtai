@@ -1,10 +1,12 @@
 package com.team.qingtai.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.NetworkResponse;
@@ -19,6 +21,7 @@ import com.android.volley.toolbox.StringRequest;
 import com.google.gson.Gson;
 import com.team.qingtai.MyApplication;
 import com.team.qingtai.R;
+import com.team.qingtai.activity.FourFragment_Activitys.FindPasswordActivity;
 import com.team.qingtai.api.Urls;
 import com.team.qingtai.base.BaseActivity;
 import com.team.qingtai.bean.loginresponse;
@@ -28,9 +31,6 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.UnsupportedEncodingException;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -40,6 +40,7 @@ public class LoginActivity extends BaseActivity {
     private EditText password;
     private Button login;
     private CustomProgressDlg mProgressDialog;
+    private TextView zhaomima;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,6 +50,13 @@ public class LoginActivity extends BaseActivity {
     }
 
     private void initView() {
+        zhaomima = (TextView) findViewById(R.id.zhaomima);
+        zhaomima.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(LoginActivity.this, FindPasswordActivity.class));
+            }
+        });
         name = (EditText) findViewById(R.id.name);
         password = (EditText) findViewById(R.id.password);
         login = (Button) findViewById(R.id.login);
@@ -63,9 +71,6 @@ public class LoginActivity extends BaseActivity {
                     mProgressDialog.setCanceledOnTouchOutside(false);
                     loadserver(name.getText().toString(), password.getText().toString());
                 }
-//                } else {
-//                    Toast.makeText(LoginActivity.this, "请检查网络连接", Toast.LENGTH_SHORT).show();
-//                }
             }
         });
     }
@@ -78,6 +83,9 @@ public class LoginActivity extends BaseActivity {
                 Gson gson = new Gson();
                 loginresponse data = gson.fromJson(response.toString(), loginresponse.class);
                 if (data.getCode() == 0) {
+                    String version = data.getVersion();
+                    version = version.replace("v", "");
+                    MyApplication.getInstance().setVersion(Double.parseDouble(version));
                     getuserInfo(0);
                     if (mProgressDialog != null) {
                         mProgressDialog.dismiss();
